@@ -2073,6 +2073,20 @@ input[type=color] {
     transform: translateY(0); /* End at original position */
   }
 }
+.mhFadeInDown {
+  animation: mhFadeInDown 1s ease-out forwards;
+}
+
+@keyframes mhFadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 @keyframes mhslideInUp {
   from {
     transform: translateY(100%);
