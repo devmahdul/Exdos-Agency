@@ -2,6 +2,10 @@ $(document).ready(function(){
 
   var windowOn = $(window);
 
+   windowOn.on('load', function () {
+      wowAnimation();
+   });
+
   // preloader 
    windowOn.on('load', function () {
       $("#loading").fadeOut(500);
@@ -25,15 +29,13 @@ $(document).ready(function(){
       $("html, body").animate({scrollTop: 0}, 300);
     });
 
-
     // sticky js 
-    var windowOn = $(window)
     windowOn.on('scroll', function () {
-      var scroll = windowOn.scrollTop();
+    var scroll = windowOn.scrollTop();
       if (scroll < 100) {
-        $("#mh-header-sticky").removeClass("header-sticky");
+         $("#mh-header-sticky").removeClass("header-sticky");
       } else {
-        $("#mh-header-sticky").addClass("header-sticky");
+         $("#mh-header-sticky").addClass("header-sticky");
       }
     });
 

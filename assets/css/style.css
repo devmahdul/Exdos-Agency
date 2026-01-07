@@ -2073,11 +2073,11 @@ input[type=color] {
     transform: translateY(0); /* End at original position */
   }
 }
-.mhFadeInDown {
-  animation: mhFadeInDown 1s ease-out forwards;
+.mhfadeInDown {
+  animation: mhfadeInDown 1s ease-out forwards;
 }
 
-@keyframes mhFadeInDown {
+@keyframes mhfadeInDown {
   0% {
     opacity: 0;
     transform: translateY(-100%);
@@ -2493,13 +2493,10 @@ input[type=color] {
   top: 0;
   left: 0;
   right: 0;
-  box-shadow: 0px 20px 30px rgba(167, 167, 167, 0.1);
   -webkit-animation: 0.7s ease-in-out 0s normal none 1 running mhfadeInDown;
   animation: 0.7s ease-in-out 0s normal none 1 running mhfadeInDown;
-  z-index: 999;
-}
-.header-sticky.mh-sticky-blue {
   background-color: var(--mh-heading-color);
+  z-index: 999;
 }
 .header-sticky .mh-main-menu nav ul li a {
   padding: 25px 0;

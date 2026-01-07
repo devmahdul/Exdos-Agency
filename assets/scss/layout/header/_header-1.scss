@@ -80,13 +80,10 @@
     top: 0;
     left: 0;
     right: 0;
-    box-shadow: 0px 20px 30px rgba(167, 167, 167, 0.1);
-    -webkit-animation: 0.7s ease-in-out 0s normal none 1 running mhfadeInDown;
-    animation: 0.7s ease-in-out 0s normal none 1 running mhfadeInDown;
+    -webkit-animation: .7s ease-in-out 0s normal none 1 running mhfadeInDown;
+    animation: .7s ease-in-out 0s normal none 1 running mhfadeInDown;
+    background-color: var(--mh-heading-color);
     z-index: 999;
-    &.mh-sticky-blue {
-        background-color: var(--mh-heading-color);
-    }
     & .mh-main-menu nav ul li a {
         padding: 25px 0;
     }
