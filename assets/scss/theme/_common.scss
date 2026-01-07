@@ -1,0 +1,72 @@
+@use '../utils' as *;
+/*---------------------------------
+    1.2 Common Classes
+---------------------------------*/
+
+.w-img{
+	& img{
+		width: 100%;
+	}
+}
+
+.m-img{
+	& img{
+		max-width: 100%;
+	}
+}
+
+.fix {
+    overflow:hidden
+}
+.clear{
+    clear: both;
+}
+
+.overflow-y-visible{
+	overflow-x: hidden;
+	overflow-y: visible;
+}
+
+.p-relative{
+	position: relative!important;
+}
+.p-absolute{
+	position: absolute!important;
+}
+.p-inherit{
+	position: inherit!important;
+}
+.#{$theme-prefix}-transparent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+}
+.#{$theme-prefix}-slide-transtion {
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+}
+
+.swiper-slide {
+    width: auto;
+    display: inline-block;
+}
+
+// custom-container-here
+$container:(1790,1748,1424,1324);
+
+@each $number in $container{
+  @media (min-width:1400px) {
+    .container-#{$number}{
+      max-width: #{$number}px;
+    }
+  }
+}
+
+.tp-h-630 {
+    min-height: 630px;
+}
+.fw-500{
+	font-weight: 500;
+}

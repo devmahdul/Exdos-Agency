@@ -1,0 +1,46 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.6 Award
+/*----------------------------------------*/
+
+.#{$theme-prefix}award {
+    border-bottom: 1px solid var(--mh-gray-color);
+    padding: 30px 0;
+    & span {
+        font-size: 20px;
+        line-height: 30px;
+        display: block;
+        margin-bottom: 10px;
+    }
+    &__wrapper {
+        & .row {
+            & [class*="col-"]:nth-child(-n+2) {
+                & .mhaward {
+                    padding-top: 0;
+                }
+            }
+            & [class*="col-"]:nth-child(even) {
+                & .mhaward {
+                    border-left: 1px solid var(--mh-gray-color);
+                    padding-left: 60px;
+                    @media #{$xs} {
+                        border-left: 0;
+                        padding-left: 0;
+                        padding-top: 30px;
+                    }
+                }
+            }
+            & [class*="col-"]:nth-last-child(-n+2) {
+                & .mhaward {
+                    border-bottom: 0;
+                    padding-bottom: 0;
+                    @media #{$xs} {
+                        border-bottom: 1px solid var(--mh-gray-color);
+                        padding: 30px 0;
+                    }
+                }
+            }
+        }
+    }
+}

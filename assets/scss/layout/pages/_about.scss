@@ -1,0 +1,184 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.5 About
+/*----------------------------------------*/
+
+.#{$theme-prefix}-about {
+    &-area {
+        @media #{$xs} {
+            & [class*="col-"]:first-child {
+                order: 2;
+        }
+            & [class*="col-"]:last-child {
+                order: 1;
+            }
+        }
+        &-2 {
+            @media #{$xs} {
+                & [class*="col-"]:first-child {
+                    order: inherit;
+                }
+                & [class*="col-"]:last-child {
+                    order: inherit;
+                }
+            }
+        }
+    }
+    &-shape {
+        & img {
+            filter: blur(47px);
+        }
+        &-01 {
+            left: 5%;
+            top: 31%;
+        }
+        &-02 {
+            right: -6%;
+            top: 5%;
+        }
+        &-03 {
+            left: 39%;
+            bottom: 27%;
+        }
+    }
+    &-wrapper {
+        @media #{$xs} {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    &-img {
+        @media #{$xs} {
+            order: 2;
+        }
+    }
+    &-video {
+        @media #{$xs} {
+            order: 1;
+            margin-bottom: 30px;
+        }
+        &-icon {
+            & a {
+                width: 80px;
+                height: 80px;
+                display: inline-block;
+                border: 1px solid var(--mh-body-color);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--mh-heading-color);
+                &:hover {
+                    background-color: var(--mh-primary-color);
+                    color: var(--mh-white-color);
+                    border-color: var(--mh-primary-color);
+                }
+            }
+        }
+        &-info {
+            & span {
+                font-size: 30px;
+                line-height: 40px;
+                display: inline-block;
+                font-family: var(--mh-heading-font);
+            }
+        }
+    }
+    &-box {
+        @media #{$xl} {
+            padding-left: 20px;
+        }
+        @media #{$lg,$md,$xs} {
+            padding-left: 0;
+        }
+    }
+    &-thumb {
+        @media #{$xs} {
+            margin-bottom: 50px;
+        }
+    }
+    &-feature {
+        &-icon {
+            & span {
+                font-size: 80px;
+                display: inline-flex;
+            }
+        }
+    }
+}
+
+.#{$theme-prefix}-about-skill {
+    &-content {
+        @media #{$md,$xs,$lg} {
+            padding-left: 0;
+        }
+    }
+    &-space {
+        padding-top: 180px;
+        padding-bottom: 100px;
+    }
+    &-img {
+        margin-right: -30px;
+        @media #{$lg,$md,$xs} {
+            margin-right: 0;
+        }
+    }
+    &-wrapper {
+        position: absolute;
+        top: -50px;
+        right: 0;
+        @media #{$lg,$md} {
+            right: 50px;
+        }
+        @media #{$xs} {
+            right: 40px;
+        }
+    }
+    &-bg {
+        background-color: var(--mh-white-color);
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        position: absolute;
+        left: -10px;
+        bottom: -10px;
+        z-index: 1;
+    }
+    &-exc {
+        background-color: var(--mh-primary-color-2);
+        padding: 25px 39px;
+        border-radius: 10px;
+        position: relative;
+        z-index: 3;
+        @media #{$xs} {
+            padding: 15px 30px;
+        }
+        & h4 {
+            font-size: 100px;
+            margin-right: 20px;
+            @media #{$xs} {
+                font-size: 80px;
+            }
+        }
+        & h5 {
+            font-size: 30px;
+            line-height: 40px;
+            font-weight: 400;
+            @media #{$xs} {
+                font-size: 25px;
+                line-height: 32px;
+            }
+        }
+    }
+    &-item {
+        & span {
+            font-size: 15px;
+            line-height: 26px;
+            color: var(--mh-heading-color);
+            font-weight: 500;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+    }
+}

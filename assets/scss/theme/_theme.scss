@@ -1,0 +1,349 @@
+@use '../utils' as *;
+/*-----------------------------------------------------------------------------------
+
+    Template Name: Exdos - Creative Agency HTML Template
+    Author: https://github.com/devmahdul
+    Support: mdmahdul10@gmail.com
+    Description: Exdos is a modern and creative HTML template, perfect for design agencies, freelancers, and creative projects. Fully responsive and easy to customize.
+    Version: 1.0.0
+
+-----------------------------------------------------------------------------------
+
+/************ TABLE OF CONTENTS ***************
+
+	-----------------
+    01. THEME CSS
+	-----------------
+		1.1 Theme Default
+		1.2 Common Classes
+		1.3 Default Spacing
+		
+	-----------------
+    02. COMPONENTS CSS
+	-----------------
+		2.1 Animations
+		2.2 Background
+		2.3 Back To Top
+		2.4 Breadcrumb
+		2.5 Buttons
+		2.6 Offcanvas
+		2.7 Pagination
+		2.8 Preloader
+		2.9 Progress Bar
+		2.10 Search Bar
+		2.11 Section Title
+		2.12 Widget Sidebar
+
+	-----------------
+    03. LAYOUT CSS
+	-----------------
+		Blog
+			3.1 Blog
+
+		Footer
+			3.2 Footer
+
+		Menu
+			3.3 Main Menu
+			3.4 Mobile Menu
+
+		Pages
+			3.5 About
+			3.6 Award
+			3.7 Contact
+			3.8 Fact
+			3.9 Faq
+			3.10 Hero
+			3.11 Newsletter
+			3.12 Portfolio
+			3.13 Pricing
+			3.14 Services
+			3.15 Tabs
+			3.16 Team
+			3.17 Testimonial
+			3.18 Video
+**********************************************/
+
+
+/*----------------------------------------*/
+/*  1.1 Theme Default
+/*----------------------------------------*/
+
+@import url($font-url);
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*---------------------------------
+	Typography CSS Start 
+---------------------------------*/
+body {
+	font-family: var(--mh-body-font);
+	font-size: 17px;
+	font-weight: normal;
+	color: var(--mh-body-color);
+	line-height: 28px;
+}
+
+a{
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--mh-heading-font);
+	color: var(--mh-heading-color);
+	margin-top: 0;
+	margin-bottom: 0;
+	font-weight: 700;
+	line-height: 1.2;
+	letter-spacing: 0;
+}
+
+h1 {
+	font-size: 110px;
+}
+  
+h2 {
+	font-size: 60px;
+}
+
+h3 {
+	font-size: 30px;
+	line-height: 40px;
+}
+
+h4 {
+	font-size: 26px;
+}
+
+h5 {
+	font-size: 20px;
+}
+
+h6 {
+	font-size: 16px;
+}
+
+ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+p {
+	font-family: var(--mh-p-font);
+	color: var(--mh-body-color);
+	font-weight: 400;
+	font-size: 17px;
+	line-height: 28px;
+	margin-bottom: 15px;
+}
+img {
+	max-width: 100%;
+}
+
+
+a,
+button,
+p,
+input,
+select,
+textarea,
+li,
+.transition-3{
+	@include mh-transition();
+}
+
+a:not([href]):not([class]), 
+a:not([href]):not([class]):hover {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:focus,
+.button:focus {
+	text-decoration: none;
+	outline: none;
+}
+
+a:focus,
+a:hover {
+	color: inherit;
+	text-decoration: none;
+}
+a,
+button {
+	color: inherit;
+	outline: none;
+	border: none;
+	background: transparent;
+}
+
+button:hover{
+	cursor: pointer;
+}
+
+button:focus{
+    outline: 0; 
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+.capitalize {
+	text-transform: capitalize;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="password"],
+input[type="url"],
+textarea{
+	outline: none;
+	background-color: transparent;
+	height: 50px;
+	width: 100%;
+	line-height: 56px;
+	font-size: 15px;
+	color: var(--mh-dblue-color);
+	border: 0;
+	border-bottom: 1px solid var(--mh-gray-color);
+	text-transform: uppercase;
+	font-weight: 500;
+
+	@include mh-placeholder{
+		color: var(--mh-gray-color);
+	}
+	// @include rtl{
+	// 	text-align: right;
+	// }
+
+	&:focus{
+		border-color: var(--mh-dblue-color);
+		&::placeholder{
+			opacity: 0;
+		}
+	}
+
+}
+
+textarea{
+	line-height: 1.4;
+	padding-top: 17px;
+	padding-bottom: 17px;
+	resize: none;
+}
+
+input[type="color"] {
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background: none;
+	border: 0;
+	cursor: pointer;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	border-radius: 50%;
+}
+
+*::-moz-selection {
+	background: var(--mh-dgray-color);
+	color: var(--mh-white-color);
+	text-shadow: none;
+}
+::-moz-selection {
+	background: var(--mh-dgray-color);
+	color: var(--mh-white-color);
+	text-shadow: none;
+}
+::selection {
+	background: var(--mh-dgray-color);
+	color: var(--mh-white-color);
+	text-shadow: none;
+}
+
+*::-moz-placeholder {
+	color: var(--mh-common-black);
+	font-size: 14px;
+	opacity: 1;
+}
+*::placeholder {
+	color: var(--mh-common-black);
+	font-size: 14px;
+	opacity: 1;
+}
+
+
+.z-index{
+	z-index: 1;
+}
+.z-index-2{
+	z-index: 2;
+}
+.z-index-3{
+	z-index: 3;
+}
+.z-index-4{
+	z-index: 4;
+}
+.z-index-5{
+	z-index: 5;
+}
+.z-index-6{
+	z-index: 6;
+}
+.z-index-7{
+	z-index: 7;
+}
+.z-index-8{
+	z-index: 8;
+}
+.z-index-9{
+	z-index: 9;
+}
+.z-index-m-1{
+	z-index: -1;
+}
+.z-index-m-2{
+	z-index: -2;
+}
+
+
+.gx-10{
+	--bs-gutter-x: 10px;
+}
+.gx-15{
+	--bs-gutter-x: 15px;
+}
+.gx-20{
+	--bs-gutter-x: 20px;
+}
+.gx-25{
+	--bs-gutter-x: 25px;
+}
+.gx-30{
+	--bs-gutter-x: 30px;
+}
+.gx-35{
+	--bs-gutter-x: 35px;
+}
+.gx-40{
+	--bs-gutter-x: 40px;
+}
+.gx-45{
+	--bs-gutter-x: 45px;
+}
+.gx-50{
+	--bs-gutter-x: 50px;
+}
+

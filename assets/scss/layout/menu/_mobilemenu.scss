@@ -1,0 +1,65 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.4 Mobile Menu
+/*----------------------------------------*/
+
+.mh-offcanvas-menu {
+    & ul {
+        list-style: none;
+        & li {
+            position: relative;
+            & a {
+                font-size: 16px;
+                font-weight: 500;
+                display: block;
+                text-transform: capitalize;
+                padding: 8px 0;
+                &:hover {
+                    color: var(--mh-primary-color);
+                }
+            }
+            &:not(:last-child) {
+                & > a {
+                    border-bottom: 1px solid rgba(1, 15, 28, 0.1);
+                }
+            }
+            &.active {
+                & > a {
+                    color: var(--mh-primary-color);
+                }
+                & > .mh-sidemenu-close {
+                    background-color: var(--mh-primary-color);
+                    border-color: var(--mh-primary-color);
+                    color: var(--mh-white-color);
+                    & i {
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+            & .sub-menu {
+                display: none;
+                margin-left: 20px;
+            }
+        }
+    }
+}
+
+.mh-sidemenu-close {
+    position: absolute;
+    right: 0;
+    top: 7.5px;
+    border: 1px solid rgba(1, 15, 28, 0.12);
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 12px;
+    &:hover {
+        background-color: var(--mh-primary-color);
+        color: var(--mh-white-color);
+    }
+    & i {
+        @include mh-transition();
+    }
+}

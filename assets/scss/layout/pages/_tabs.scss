@@ -1,0 +1,76 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.15 Tabs
+/*----------------------------------------*/
+
+.#{$theme-prefix}-project-tab {
+    @media #{$md} {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    &-area {
+        @media #{$lg} {
+            padding-right: 40px;
+        }
+        @media #{$md} {
+            padding-right: 0;
+        }
+        @media #{$xs} {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+    }
+    & button {
+        color: var(--mh-white-color);
+        display: block;
+        font-size: 100px;
+        font-family: var(--mh-heading-font);
+        line-height: 1.2;
+        border-bottom: 1px solid #2f446b;
+        padding: 10px 100px;
+        padding-right: 35px;
+        @media #{$xxl} {
+            font-size: 80px;
+        }
+        @media #{$xl} {
+            font-size: 75px;
+            padding-left: 40px;
+        }
+        @media #{$lg} {
+            font-size: 55px;
+            padding-left: 30px;
+        }
+        @media #{$md} {
+            font-size: 20px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        @media #{$xs} {
+            font-size: 18px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        &.active {
+            color: var(--mh-primary-color-2);
+            border-color: var(--mh-primary-color-2);
+        }
+    }
+    &-thumb {
+        padding-left: 85px;
+        @media #{$xxl,$xl,$lg} {
+            padding-left: 0;
+        }
+        @media #{$md} {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+        @media #{$xs} {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}

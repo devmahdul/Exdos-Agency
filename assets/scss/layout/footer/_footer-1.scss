@@ -1,0 +1,185 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.2 Footer
+/*----------------------------------------*/
+
+.#{$theme-prefix}-footer {
+    &-sep {
+        background-color: var(--mh-white-color);
+        height: 1px;
+        opacity: 0.15;
+    }
+    &-social {
+        @media #{$xs} {
+            padding-left: 0;
+        }
+        & a {
+            font-size: 20px;
+            color: var(--mh-white-color);
+            opacity: .7;
+            margin-right: 18px;
+            &:last-child {
+                margin-right: 0;
+            }
+            &:hover {
+                color: var(--mh-primary-color-2);
+            }  
+        }
+    }
+    &-widget {
+        &-area {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        &-title {
+            font-size:20px;
+            line-height: 30px;
+            color: var(--mh-white-color);
+        }
+        & p {
+            color: var(--mh-sliver-color);
+        }
+        & ul {
+            list-style: none;
+            & li {
+                & a {
+                    color: var(--mh-sliver-color);
+                    line-height: 32px;
+                    display: inline-block;
+                    &:hover {
+                        color: var(--mh-primary-color-2);
+                    }
+                }
+            }
+        }
+        &-content {
+            & span {
+                color: var(--mh-sliver-color);
+                display: block;
+            }
+            & h4 {
+                color: var(--mh-white-color);
+                font-size: 30px;
+                line-height: 40px;
+                @include mh-transition();
+                @media #{$xl,$lg,$md} {
+                    font-size: 26px;
+                }
+                &:hover {
+                    color: var(--mh-primary-color-2);
+                }
+            }
+        }
+    }
+    &-copyright {
+        & p {
+            color: var(--mh-sliver-color);
+            & a {
+                color: var(--mh-primary-color-2);
+            }
+        }
+        &-menu {
+            & ul {
+                list-style: none;
+                & li {
+                    display: inline-block;
+                    padding-left: 33px;
+                    margin-left: 33px;
+                    position: relative;
+                    @media #{$xs} {
+                        padding-left: 15px;
+                        margin-left: 15px;
+                    }
+                    &:first-child {
+                        padding-left: 0;
+                        margin-left: 0;
+                        &::before {
+                            display: none;
+                        }
+                    }
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 1.5px;
+                        height: 12px;
+                        background-color: var(--mh-sliver-color);
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+                    }
+                    & a {
+                        display: inline-block;
+                        color: var(--mh-sliver-color);
+                        font-size: 15px;
+                        line-height: 25px;
+                        text-transform: uppercase;
+                        font-weight: 500;
+                        &:hover {
+                            color: var(--mh-primary-color-2);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-shape {
+        &-01 {
+            left: 16%;
+            top: 40%;
+        }
+        &-02 {
+            left: 46%;
+            top: 14%;
+        }
+        &-03 {
+            right: 6%;
+            top: 8%;
+        }
+        &-04 {
+            bottom: 5%;
+            right: 10%;
+        }
+    }
+}
+
+.#{$theme-prefix}-footer-col {
+    &-3 {
+        padding-left: 60px;
+        position: relative;
+        @media #{$md} {
+            padding-left: 40px;
+        }
+        @media #{$xs} {
+            padding-left: 0;
+        }
+        &:before, &:after {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 242px;
+            background-color: var(--mh-white-color);
+            opacity: .15;
+            left: -40px;
+            top: 0;
+            @media #{$md} {
+                left: 0;
+            }
+            @media #{$xs} {
+                position: static;
+            }
+        }
+        &::after {
+            left: auto;
+            right: 30px;
+            @media #{$md} {
+                right: 0;
+            }
+        }
+    }
+    &-4 {
+        padding-left: 35px;
+        @media #{$md,$xs} {
+            padding-left: 0;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.2 Background
+/*----------------------------------------*/
+
+.mh-dblue-bg {
+    background-color: var(--mh-dblue-color);
+}
+.mh-primary-bg {
+    background-color: var(--mh-primary-color);
+}
+.mh-nblue-bg {
+    background-color: var(--mh-nblue-color);
+}
+.mh-yellow-bg {
+    background-color: var(--mh-primary-color-2);
+}
+.mh-creamy-bg {
+    background-color: var(--mh-creamy-color);
+}

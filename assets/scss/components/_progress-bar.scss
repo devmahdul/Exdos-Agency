@@ -1,0 +1,49 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.9 Progress Bar
+/*----------------------------------------*/
+
+.#{$theme-prefix}-progress {
+    border: 1px solid var(--mh-gray-color);
+    padding: 0 4px;
+    border-radius: 4px;
+    & label {
+        background-color: var(--mh-primary-color);
+        font-size: 11px;
+        line-height: 1;
+        font-weight: 700;
+        color: var(--mh-white-color);
+        padding: 6px;
+        border-radius: 5px;
+        position: absolute;
+        left: 0;
+        bottom: 33px;
+        transform: translateX(-40px);
+        &:before {
+            width: 0px;
+            height: 0px;
+            border-style: solid;
+            border-width: 0 10px 10px 0;
+            border-color: transparent var(--mh-primary-color) transparent transparent;
+            transform: rotate(0deg);
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            left: 0;
+            margin: auto;
+        }
+    }
+    &-bar {
+        width: 100%;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        &-fill {
+            background-color: var(--mh-primary-color);
+            height: 12px;
+            border-radius: 5px;
+        }
+    }
+}

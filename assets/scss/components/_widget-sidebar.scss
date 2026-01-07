@@ -1,0 +1,150 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.12 Widget Sidebar
+/*----------------------------------------*/
+
+.#{$theme-prefix}-widget {
+    &-sidebar {
+        background-color: var(--mh-creamy-color);
+        padding: 40px;
+        border-radius: 10px;
+        @media #{$lg} {
+            padding: 25px;
+        }
+    }
+    &-title {
+        font-size: 24px;
+        & span {
+            width: 10px;
+            height: 10px;
+            background-color: var(--mh-primary-color);
+            display: inline-block;
+            border-radius: 50%;
+            transform: translateY(-3px);
+        }
+    }
+    &-cat {
+        & ul {
+            list-style: none;
+            & li {
+                &:not(:last-child) {
+                    margin-bottom: 15px;
+                }
+                & a {
+                    display: block;
+                    background-color: var(--mh-white-color);
+                    padding: 15px 25px;
+                    border: 1px solid var(--mh-gray-color);
+                    border-radius: 5px;
+                    position: relative;
+                    &:after {
+                        content: "\f061";
+                        position: absolute;
+                        font-family: "Font Awesome 5 Pro";
+                        right: 25px;
+                        top: 50%;
+                        transform: translateY(-50%) rotate(-45deg);
+                    }
+                }
+                &:hover {
+                    & a {
+                        background-color: var(--mh-primary-color);
+                        color: var(--mh-white-color);
+                    }
+                }
+            }
+        }
+    }
+    &-meta {
+        & span {
+            & a {
+                &:hover {
+                    color: var(--mh-primary-color);
+                }
+                & i {
+                    margin-right: 2px;
+                }
+            }
+        }
+    }
+    &-post {
+        &:not(:last-child) {
+            border-bottom: 1px solid var(--mh-gray-color);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        &-title {
+            font-size: 20px;
+            line-height: 30px;
+            @include mh-transition();
+            &:hover {
+                color: var(--mh-primary-color);
+            }
+        }
+    }
+    &-tag {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        & button {
+            font-size: 15px;
+            font-weight: 500;
+            border: 1px solid var(--mh-gray-color);
+            border-radius: 5px;
+            line-height: 1;
+            padding: 17px;
+            text-transform: uppercase;
+            &:hover {
+                background-color: var(--mh-primary-color);
+                color: var(--mh-white-color);
+                border-color: var(--mh-primary-color);
+            }
+        }
+    }
+}
+
+
+.#{$theme-prefix}-support-cta {
+    &-bg {
+        border-radius: 10px;
+        position: relative;
+        z-index: 2;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(360deg, rgba(0, 28, 82, 0.8) 34.12%, rgba(0, 28, 82, 0.152) 108.24%);
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+            z-index: -1;
+        }
+    }
+    &-content {
+        padding: 180px 53px 50px;
+        @media #{$xl} {
+            padding: 140px 35px 40px;
+        }
+        @media #{$lg} {
+            padding: 130px 30px 40px;
+        }
+        @media #{$xs} {
+            padding: 170px 35px 40px;
+        }
+        @media #{$sm} {
+            padding: 180px 53px 50px;
+        }
+        & h3 {
+            font-size: 30px;
+            line-height: 40px;
+            color: var(--mh-white-color);
+            font-weight: 400;
+            @media #{$xl,$lg} {
+                font-size: 25px;
+                line-height: 35px;
+            }
+        }
+    }
+}

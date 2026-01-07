@@ -1,0 +1,93 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.1 Header Style 1
+/*----------------------------------------*/
+
+.#{$theme-prefix}-header {
+    &-area {
+        @media #{$xl,$lg,$md} {
+            padding-left: 30px;
+        }
+        @media #{$xs} {
+            padding-left: 15px;
+        }
+    }
+    &-border {
+        border-bottom: 1px solid #2F323B;
+    }
+    &-logo {
+        & img {
+            width: 166px;
+        }
+    }
+    &-search {
+        & button {
+            & i {
+                font-size: 30px;
+                color: var(--mh-sliver-color);
+            }
+        }
+    }
+    &-cta {
+        padding-left: 30px;
+        padding-right: 50px;
+        border-left: 1px solid #2F323B;
+        height: 100%;
+        @media #{$xl} {
+            padding-right: 30px;
+        }
+        &-icon{
+            margin-right: 14px;
+            & i {
+                font-size: 35px;
+                color: var(--mh-primary-color-2);
+            }
+        }
+        &-text{
+            & span {
+                color: #B1B4BA;
+                display: block;
+                font-size: 15px;
+                line-height: 1;
+                margin-bottom: 2px;
+            }
+            & a {
+                color: var(--mh-white-color);
+                font-size: 18px;
+                font-family: var(--mh-heading-font);
+            }
+        }
+    }
+    &-bar {
+        height: 100%;
+        & button {
+            background-color: #23252D;
+            padding: 10px 24px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            & i {
+                color: var(--mh-white-color);
+                font-size: 60px;
+            }
+        }
+    }
+}
+
+.header-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0px 20px 30px rgba(167, 167, 167, 0.1);
+    -webkit-animation: 0.7s ease-in-out 0s normal none 1 running mhfadeInDown;
+    animation: 0.7s ease-in-out 0s normal none 1 running mhfadeInDown;
+    z-index: 999;
+    &.mh-sticky-blue {
+        background-color: var(--mh-heading-color);
+    }
+    & .mh-main-menu nav ul li a {
+        padding: 25px 0;
+    }
+}

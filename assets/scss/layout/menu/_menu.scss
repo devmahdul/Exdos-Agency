@@ -1,0 +1,104 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.3 Main Menu
+/*----------------------------------------*/
+
+.#{$theme-prefix}-main {
+    &-menu {
+        padding-left: 42px;
+        @media #{$xl} {
+            padding-left: 10px;
+        }
+        & nav {
+            & ul {
+                list-style: none;
+                & li {
+                    display: inline-block;
+                    position: relative;
+                    margin-right: 38px;
+                    @media #{$xxl} {
+                        margin-right: 28px;
+                    }
+                    @media #{$xl} {
+                        margin-right: 20px;
+                    }
+                    &:hover {
+                        & a {
+                            color: var(--mh-primary-color-2);
+                            text-transform: capitalize;
+                            &:before {
+                                opacity: 1;
+                                top: 0;
+                            }
+                        }
+                        & > .sub-menu {
+                            opacity: 1;
+                            visibility: visible;
+                            top: 100%;
+                        }
+                    }
+                    & a {
+                        color: var(--mh-white-color);
+                        font-size: 18px;
+                        line-height: 28px;
+                        text-transform: capitalize;
+                        display: inline-block;
+                        padding: 36px 0;
+                        font-family: var(--mh-heading-font);
+                        position: relative;
+                        &:before {
+                            content: "\f103";
+                            position: absolute;
+                            font-family: var(--mh-flaticon-font);
+                            color: var(--mh-primary-color-2);
+                            font-size: 40px;
+                            top: -5px;
+                            left: 25px;
+                            opacity: 0;
+                            @include mh-transition();
+                        }
+                    }
+                    & .sub-menu {
+                        position: absolute;
+                        background-color: #fff;
+                        width: 213px;
+                        left: 0;
+                        top: 105%;
+                        padding: 16px 0;
+                        box-shadow: 0px 20px 30px rgba(1, 15, 28, 0.1);
+                        opacity: 0;
+                        visibility: hidden;
+                        @include mh-transition();
+                        & li {
+                            display: block;
+                            margin-right: 0;
+                            &:hover {
+                                & > a {
+                                    color: var(--mh-primary-color);
+                                }
+                            }
+                            & a {
+                                color: #000;
+                                display: block;
+                                padding: 4px 25px;
+                                &:before {
+                                    display: none;
+                                }
+                            }
+                            & .sub-menu {
+                                left: 102%;
+                                top: 0;
+                            }
+                            &:hover {
+                                & > .sub-menu {
+                                    left: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

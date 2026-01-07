@@ -1,0 +1,101 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.17 Testimonial
+/*----------------------------------------*/
+
+.#{$theme-prefix}-testimonial {
+    &-shape {
+        &-01 {
+            top: 50px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            @media #{$lg} {
+                top: 0;
+            }
+        }
+    }
+    &-thumb {
+        &-01 {
+            left: 0;
+            top: 20%;
+            @media #{$xl} {
+                top: 8%;
+            }
+        }
+        &-02 {
+            right: 0;
+            top: 5%;
+        }
+    }
+    &-desc {
+        font-size: 100px;
+        line-height: 1.2;
+        font-weight: 700;
+        @media #{$xl} {
+            font-size: 75px;
+            line-height: 1.1;
+        }
+        @media #{$lg} {
+            font-size: 60px;
+            line-height: 1.1;
+        }
+        @media #{$md} {
+            font-size: 50px;
+            line-height: 1.1;
+        }
+        @media #{$xs} {
+            font-size: 35px;
+        }
+    }
+    &-author {
+        &-name {
+            font-size: 30px;
+            line-height: 40px;
+        }
+        &-desig {
+            & span {
+                width: 60px;
+                height: 1px;
+                background-color: var(--mh-gray-color);
+                display: inline-block;
+                transform: translateY(-5px);
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+// slider button 
+.#{$theme-prefix}-test-arrow {
+    font-size: 52px;
+    position: absolute;
+    left: -100px;
+    top: 32%;
+    display: inline-flex;
+    @media #{$xxl,$xl,$md,$xs} {
+        position: static;
+        display: inline-block;
+        margin-top: 30px;
+    }
+    @media #{$lg} {
+        left: 0;
+        top: 20%;
+        z-index: 4;
+    }
+    &-prev {
+        transform: rotate(180deg);
+    }
+    &-next {
+        left: auto;
+        right: -100px;
+        @media #{$lg} {
+            left: auto;
+            right: 0;
+        }
+    }
+    &:hover {
+        color: var(--mh-primary-color);
+    }
+}

@@ -1,0 +1,29 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.10 Search Bar
+/*----------------------------------------*/
+
+.#{$theme-prefix}-search-bar {
+    &-area {
+        position: fixed;
+        height: 400px;
+        background-color: var(--mh-white-color);
+        top: -100%;
+        left: 0;
+        right: 0;
+        z-index: 2020;
+        @include mh-transition();
+        transform: translateY(-100%);
+        &.mh-search-bar-open {
+            top: 0;
+            transform: translateY(0);
+        }
+    }
+    &-close {
+        font-size: 30px;
+        position: absolute;
+        right: 50px;
+        top: 35px;
+    }
+}

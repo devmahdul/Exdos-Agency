@@ -1,0 +1,65 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.16 Team
+/*----------------------------------------*/
+
+.#{$theme-prefix}-team {
+    &-slider {
+        font-size: 52px;
+        display: inline-flex;
+        &-prev {
+            transform: rotate(180deg);
+        }
+        &-arrow {
+            & span {
+                width: 12px;
+                height: 12px;
+                display: inline-block;
+                background-color: #DBDBDB;
+                border-radius: 50%;
+                margin: 0 10px;
+            }
+        }
+        &:hover {
+            color: var(--mh-primary-color);
+        }
+    }
+}
+
+.#{$theme-prefix}team {
+    &__info {
+        margin-left: 0;
+    }
+    &__title {
+        @include mh-transition();
+        &:hover {
+            color: var(--mh-primary-color);
+        }
+    }
+    &__info {
+        & span {
+            & label {
+                width: 60px;
+                height: 1px;
+                display: inline-block;
+                background-color: #d6d6d1;
+                transform: translateY(-5px);
+                margin-right: 10px;
+            }
+        }
+    }
+    &__social {
+        & a {
+            font-size: 25px;
+            margin-right: 15px;
+            display: inline-block;
+            &:last-child {
+                margin-right: 0;
+            }
+            &:hover {
+                color: var(--mh-primary-color);
+            }
+        }
+    }
+}

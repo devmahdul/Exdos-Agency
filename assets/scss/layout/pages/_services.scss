@@ -1,0 +1,141 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.14 Services
+/*----------------------------------------*/
+
+.#{$theme-prefix}services {
+    border: 1px solid var(--mh-gray-color);
+    padding: 50px 40px;
+    margin-right: -1px;
+    @include mh-transition();
+    @media #{$xl} {
+        padding: 40px 30px;
+    }
+    &__icon {
+        & span {
+            font-size: 92px;
+            color: var(--mh-dblue-color);
+            display: inline-flex;
+        }
+    }
+    &__title {
+        font-size: 30px;
+        line-height: 40px;
+        @include mh-transition();
+        @media #{$xl} {
+            font-size: 28px;
+        }
+        &:hover {
+            color: var(--mh-primary-color);
+        }
+    }
+    &__list {
+        & ul {
+            list-style: none;
+            & li {
+                margin-bottom: 10px;
+                &:before {
+                    content: '';
+                    width: 8px;
+                    height: 8px;
+                    background-color: var(--mh-gray-color);
+                    border-radius: 50%;
+                    display: inline-block;
+                    transform: translateY(-1px);
+                    margin-right: 8px;
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    &:hover {
+        background-color: var(--mh-creamy-color);
+        & .mh-btn-big {
+                background-color: var(--mh-primary-color);
+                color: var(--mh-white-color);
+        }
+    }
+}
+
+.#{$theme-prefix}-service {
+    &-sidebar {
+        padding-right: 20px;
+        @media #{$lg,$md,$xs} {
+            padding-right: 0;
+        }
+    }
+    &-details {
+        &-list {
+            &-content {
+                background-color: var(--mh-creamy-color);
+                padding: 20px 25px;
+                border-radius: 10px;
+                & span {
+                    font-size: 24px;
+                    font-family: var(--mh-heading-font);
+                    width: 50px;
+                    height: 50px;
+                    background-color: var(--mh-primary-color);
+                    color: var(--mh-white-color);
+                    border-radius: 50%;
+                    display: inline-block;
+                    text-align: center;
+                    line-height: 50px;
+                    margin-right: 15px;
+                    flex: 0 0 auto;
+                }
+            }
+            &-title {
+                font-size: 30px;
+                @media #{$lg} {
+                    font-size: 25px;
+                    line-height: 32px;
+                }
+            }
+        }
+    }
+    &-workflow {
+        &-numb {
+            @media #{$lg,$md} {
+                margin-bottom: 0;
+            }
+            & span {
+                font-size: 30px;
+                font-weight: 400;
+                line-height: 40px;
+                font-family: var(--mh-heading-font);
+                display: inline-block;
+                position: relative;
+                @media #{$lg,$md} {
+                    padding-left: 10px;
+                }
+                &:before {
+                    content: "";
+                    position: absolute;
+                    width: 60px;
+                    height: 1px;
+                    background-color: var(--mh-gray-color);
+                    left: -70px;
+                    top: 50%;
+                    @media #{$lg,$md} {
+                        width: 15px;
+                        left: -10px;
+                    }
+                    @media #{$xs} {
+                        display: none;
+                    }
+                }
+            }
+        }
+        &-title {
+            font-size: 30px;
+            line-height: 40px;
+            @media #{$lg,$md,$xs} {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

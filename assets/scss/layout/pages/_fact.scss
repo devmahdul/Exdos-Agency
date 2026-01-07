@@ -1,0 +1,47 @@
+@use '../../utils' as *; 
+
+/*----------------------------------------*/
+/*  3.8 Fact
+/*----------------------------------------*/
+
+.#{$theme-prefix}fact {
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    &__cols {
+        @media #{$md} {
+            width: 50%;
+        }
+    }
+    &__icon {
+        & span {
+            font-size: 110px;
+            display: inline-flex;
+            color: var(--mh-primary-color-2);
+            @media #{$xl,$lg} {
+                font-size: 95px;
+            }
+        }
+    }
+    &__title {
+        color: var(--mh-white-color);
+        opacity: .5;
+        @media #{$xl,$lg} {
+            font-size: 25px;
+            margin-bottom: 5px;
+        }
+    }
+    &__text {
+        & span {
+            font-size: 100px;
+            color: var(--mh-white-color);
+            line-height: 1.2;
+            font-family: var(--mh-heading-font);
+            @media #{$xl,$lg} {
+                font-size: 90px;
+            }
+        }
+    }
+}

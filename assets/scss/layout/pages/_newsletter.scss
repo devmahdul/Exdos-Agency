@@ -1,0 +1,68 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.11 Newsletter
+/*----------------------------------------*/
+
+.#{$theme-prefix}-newsletter {
+    &-margin {
+        margin-top: -115px;
+    }
+    &-bg {
+        padding: 70px 80px;
+        @media #{$xs} {
+            padding: 50px 40px;
+        }
+    }
+    &-box {
+        @media #{$lg,$md,$xs} {
+            padding-left: 0;
+        }
+        & form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        & input {
+            color: var(--mh-white-color);
+            border-color: var(--mh-white-color);
+            padding-right: 45px;
+            &:focus {
+                color: var(--mh-white-color);
+            }
+            @include mh-placeholder {
+                color: var(--mh-white-color);
+            }
+        }
+    }
+    &-back {
+        font-size: 100px;
+        color: var(--mh-white-color);
+        left: 20%;
+        bottom: -35px;
+        line-height: 1;
+        opacity: .1;
+        @media #{$lg} {
+            left: 12%;
+        }
+        @media #{$md} {
+            left: 16%;
+            font-size: 48px;
+            bottom: -11px;
+        }
+    }
+    &-input {
+        width: calc(100% - 210px);
+        @media #{$xs} {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        & span {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}
