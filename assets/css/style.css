@@ -3971,6 +3971,11 @@ input[type=color] {
     width: 50%;
   }
 }
+@media (max-width: 767px) {
+  .mhfact__cols {
+    width: 100%;
+  }
+}
 .mhfact__icon span {
   font-size: 110px;
   display: inline-flex;
